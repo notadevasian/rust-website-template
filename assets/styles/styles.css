@@ -1,0 +1,128 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+
+
+:root {
+    --color-primary: #16a34a;
+    --color-secondary: #26d985;
+    --color-accent: #1FB2A6;
+    --color-neutral: #1E1E1E;
+    --color-text-primary: #fff;
+    --color-base-100: #1E1E1E;
+    --color-base-200: #161616;
+}
+
+
+
+/* CSS RESET */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* BODY */
+
+body {
+    background-color: var(--color-base-100);
+}
+
+/* HEADER */
+
+header {
+    background-color: var(--color-base-200);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+/* NAV BAR */
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.nav__brand {
+    font-size: 2rem;
+    color: var(--color-text-primary);
+}
+
+.nav__link {
+    transition: 0.3s ease;
+}
+
+.nav__link:hover {
+    color: var(--color-accent);
+}
+
+/* HAMBURGER MENU */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+@media screen and (max-width:768px){
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav__menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--color-base-200);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav__item {
+        margin: 16px 0;
+    }
+
+    .nav__menu.active {
+        left: 0;
+    }
+}
