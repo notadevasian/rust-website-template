@@ -1,17 +1,17 @@
 /* Imports */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
 
+/* THEME */
 
 :root {
     --color-primary: #16a34a;
-    --color-secondary: #26d985;
+    --color-secondary: #22914a;
     --color-accent: #1FB2A6;
     --color-neutral: #1E1E1E;
     --color-text-primary: #fff;
     --color-base-100: #1E1E1E;
     --color-base-200: #161616;
 }
-
 
 
 /* CSS RESET */
@@ -23,10 +23,23 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.container {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.divider {
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--color-base-200);
+    margin-top: 10rem;
+}
+
 /* BODY */
 
 body {
     background-color: var(--color-base-100);
+    color: var(--color-text-primary);
 }
 
 /* HEADER */
@@ -90,6 +103,124 @@ a {
     transition: all 0.3s ease-in-out;
     background-color: #fff;
 }
+
+/* MAIN CONTENT */
+
+.accent {
+    color: var(--color-accent);
+}
+
+.welcome {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 40px;
+    margin: 5rem 0;
+    justify-content: center;
+    text-align: center;
+}
+
+/* SERVER SECTION */
+
+.servers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 40px;
+    place-content: center;
+}
+
+.server {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    background-color: var(--color-base-200);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    padding: 2.5rem;
+}
+
+.server:hover {
+    transform: scale(1.01);
+}
+
+.server__footer {
+    padding: 1rem;
+}
+
+.server__footer button {
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    transition: all 0.2s ease-in-out;
+}
+
+.server__footer button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* STORE SECTION */
+
+.store {
+    margin: 10rem 0;
+}
+
+.store__image {
+    width: 25rem;
+    height: 25rem;
+    opacity: 0.5;
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.store__text h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+.store__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 2rem;
+    float: right;
+}
+
+.store__btn {
+    color: var(--color-text-primary);
+    background-color: var(--color-primary);
+    border: none;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.store__btn:hover {
+    background-color: var(--color-secondary);
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    height: 5rem;            /* Footer height */
+    background-color: var(--color-base-200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* RESPONSIVE DESIGN */
+
 
 @media screen and (max-width:768px){
     .hamburger {
